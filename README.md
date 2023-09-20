@@ -40,7 +40,7 @@ Please provide context about the mitigations that were applied if applicable and
 
 ## Mitigations to be reviewed
 
-### Branch
+### Branch``
 [ ⭐️ SPONSORS ADD A LINK TO THE BRANCH IN YOUR REPO CONTAINING ALL PRS ]
 
 ### Individual PRs
@@ -50,7 +50,25 @@ Wherever possible, mitigations should be provided in separate pull requests, one
 
 | URL | Mitigation of | Purpose | 
 | ----------- | ------------- | ----------- |
-| https://github.com/your-repo/sample-contracts/pull/XXX | H-01 | This mitigation does XYZ | 
+| https://github.com/reserve-protocol/protocol/pull/899 | H-01 | Fixes units and price calculations in cbETH, rETH, ankrETH collateral plugins. |
+| https://github.com/reserve-protocol/protocol/pull/896 | H-02 | Removes CurveVolatileCollateral. |
+| https://github.com/reserve-protocol/protocol/pull/930 | H-03 | Skip reward claim in _checkpoint if shutdown. |
+| https://github.com/reserve-protocol/protocol/pull/896 | M-01 | Removes CurveVolatileCollateral. |
+| https://github.com/reserve-protocol/protocol/pull/889 | M-02 | Use decimals from underlying Comet. |
+| https://github.com/reserve-protocol/protocol/pull/916 | M-03 | Acknowledged and documented. |
+| https://github.com/reserve-protocol/protocol/pull/896 | M-04 | Roll over remainder to next call. |
+| https://github.com/reserve-protocol/protocol/pull/896 | M-05 | Add call to emergencyWithdraw. |
+| https://github.com/reserve-protocol/protocol/pull/917 | M-06 | Enforce (0, FIX_MAX) as "unpriced" during oracle timeout. |
+| | M-07 | Acknowledged. See details in commentt https://github.com/code-423n4/2023-07-reserve-findings/issues/24#issuecomment-1670250237 |
+| https://github.com/reserve-protocol/protocol/pull/917 | M-08 | Unpriced on oracle timeout. |
+| https://github.com/reserve-protocol/protocol/pull/917 | M-09 | Enforce (0, FIX_MAX) as "unpriced" during oracle timeout. |
+| https://github.com/reserve-protocol/protocol/pull/896 | M-10 | Acknowledged, documented. |
+| https://github.com/reserve-protocol/protocol/pull/920 | M-11 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/12#issuecomment-1695841823 |
+| https://github.com/reserve-protocol/protocol/pull/920 | M-12 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/10#issuecomment-1701397555 |
+| | M-13 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/8#issuecomment-1688439465 |
+| | M-14 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/7#issuecomment-1695796001 |
+| | M-15 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/4#issuecomment-1695841054 |
+
 
 ## Out of Scope
 
