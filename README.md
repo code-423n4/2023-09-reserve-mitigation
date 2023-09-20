@@ -11,7 +11,7 @@ Each warden must submit a mitigation review for *every High and Medium finding* 
 
 ## Findings being mitigated
 
-Mitigations of all High and Medium issues will be considered in-scope and listed here.
+Mitigations of all High and Medium issues will be considered in-scope, with the following exceptions: M-07, M-13, M-14, and M-15. Please refer to the "Out of scope" section below for details and context on the four acknowledged / out of scope findings.
 
 - [H-01: CBEthCollateral and AnkrStakedEthCollateral _underlyingRefPerTok is incorrect](https://github.com/code-423n4/2023-07-reserve-findings/issues/23)
 - [H-02: CurveVolatileCollateral Collateral status can be manipulated by flashloan attack](https://github.com/code-423n4/2023-07-reserve-findings/issues/22)
@@ -22,12 +22,14 @@ Mitigations of all High and Medium issues will be considered in-scope and listed
 - [M-04: Possible rounding during the reward calculation](https://github.com/code-423n4/2023-07-reserve-findings/issues/30)
 - [M-05: Permanent funds lock in StargateRewardableWrapper](https://github.com/code-423n4/2023-07-reserve-findings/issues/27)
 - [M-06: CurveStableMetapoolCollateral.tryPrice returns a huge but valid high price when the price oracle of pairedToken is timeout](https://github.com/code-423n4/2023-07-reserve-findings/issues/25)
-- [M-07: The Asset.lotPrice doubles the oracle timeout in the worst case](https://github.com/code-423n4/2023-07-reserve-findings/issues/24)
 - [M-08: User can't redeem from RToken based on CurveStableRTokenMetapoolCollateral when any underlying collateral of paired RToken's price oracle is offline(timeout)](https://github.com/code-423n4/2023-07-reserve-findings/issues/21)
 - [M-09: RTokenAsset price oracle can return a huge but valid high price when any underlying collateral's price oracle timeout](https://github.com/code-423n4/2023-07-reserve-findings/issues/20)
 - [M-10: Asset.lotPrice only uses oracleTimeout to determine if the price is stale.](https://github.com/code-423n4/2023-07-reserve-findings/issues/17)
 - [M-11: StaticATokenLM transfer missing _updateRewards](https://github.com/code-423n4/2023-07-reserve-findings/issues/12)
 - [M-12: _claimRewardsOnBehalf() User's rewards may be lost](https://github.com/code-423n4/2023-07-reserve-findings/issues/10)
+
+### Findings acknowledged and NOT mitigated:
+- [M-07: The Asset.lotPrice doubles the oracle timeout in the worst case](https://github.com/code-423n4/2023-07-reserve-findings/issues/24)
 - [M-13: Lack of protection when caling CusdcV3Wrapper._withdraw](https://github.com/code-423n4/2023-07-reserve-findings/issues/8)
 - [M-14: Lack of protection when withdrawing Static Atoken](https://github.com/code-423n4/2023-07-reserve-findings/issues/7)
 - [M-15: Potential Loss of Rewards During Token Transfers in StaticATokenLM.sol](https://github.com/code-423n4/2023-07-reserve-findings/issues/4)
@@ -66,7 +68,6 @@ Wherever possible, mitigations should be provided in separate pull requests, one
 
 ## Out of Scope
 
-Please list any High and Medium issues that were judged as valid but you have chosen not to fix.
 | URL | Mitigation of | Purpose | 
 | ----------- | ------------- | ----------- |
 | | M-07 | Acknowledged. See details in commentt https://github.com/code-423n4/2023-07-reserve-findings/issues/24#issuecomment-1670250237 |
