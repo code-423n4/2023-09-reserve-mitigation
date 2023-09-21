@@ -11,7 +11,7 @@ Each warden must submit a mitigation review for *every High and Medium finding* 
 
 ## Findings being mitigated
 
-Mitigations of all High and Medium issues will be considered in-scope, with the following exceptions: M-07, M-13, M-14, and M-15. Please refer to the "Out of scope" section below for details and context on the four acknowledged / out of scope findings.
+Mitigations of all High and Medium issues will be considered in-scope, with the following exceptions: M-07, M-10, M-11, M-12, M-13, M-14, and M-15. Please refer to the "Out of scope" section below for details and context on the four acknowledged / out of scope findings.
 
 - [H-01: CBEthCollateral and AnkrStakedEthCollateral _underlyingRefPerTok is incorrect](https://github.com/code-423n4/2023-07-reserve-findings/issues/23)
 - [H-02: CurveVolatileCollateral Collateral status can be manipulated by flashloan attack](https://github.com/code-423n4/2023-07-reserve-findings/issues/22)
