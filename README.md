@@ -24,26 +24,29 @@ Mitigations of all High and Medium issues will be considered in-scope, with the 
 - [M-06: CurveStableMetapoolCollateral.tryPrice returns a huge but valid high price when the price oracle of pairedToken is timeout](https://github.com/code-423n4/2023-07-reserve-findings/issues/25)
 - [M-08: User can't redeem from RToken based on CurveStableRTokenMetapoolCollateral when any underlying collateral of paired RToken's price oracle is offline(timeout)](https://github.com/code-423n4/2023-07-reserve-findings/issues/21)
 - [M-09: RTokenAsset price oracle can return a huge but valid high price when any underlying collateral's price oracle timeout](https://github.com/code-423n4/2023-07-reserve-findings/issues/20)
-- [M-10: Asset.lotPrice only uses oracleTimeout to determine if the price is stale.](https://github.com/code-423n4/2023-07-reserve-findings/issues/17)
-- [M-11: StaticATokenLM transfer missing _updateRewards](https://github.com/code-423n4/2023-07-reserve-findings/issues/12)
-- [M-12: _claimRewardsOnBehalf() User's rewards may be lost](https://github.com/code-423n4/2023-07-reserve-findings/issues/10)
 
 ### Findings acknowledged and NOT mitigated:
 - [M-07: The Asset.lotPrice doubles the oracle timeout in the worst case](https://github.com/code-423n4/2023-07-reserve-findings/issues/24)
+- [M-10: Asset.lotPrice only uses oracleTimeout to determine if the price is stale.](https://github.com/code-423n4/2023-07-reserve-findings/issues/17)
+- [M-11: StaticATokenLM transfer missing _updateRewards](https://github.com/code-423n4/2023-07-reserve-findings/issues/12)
+- [M-12: _claimRewardsOnBehalf() User's rewards may be lost](https://github.com/code-423n4/2023-07-reserve-findings/issues/10)
 - [M-13: Lack of protection when caling CusdcV3Wrapper._withdraw](https://github.com/code-423n4/2023-07-reserve-findings/issues/8)
 - [M-14: Lack of protection when withdrawing Static Atoken](https://github.com/code-423n4/2023-07-reserve-findings/issues/7)
 - [M-15: Potential Loss of Rewards During Token Transfers in StaticATokenLM.sol](https://github.com/code-423n4/2023-07-reserve-findings/issues/4)
 
-[ ⭐️ SPONSORS ADD INFO HERE ]
 
 ## Overview of changes
 
-Please provide context about the mitigations that were applied if applicable and identify any areas of specific concern.
+Units and price calculations in LSD collateral types were fixed.
+CurveVolatileCollateral was removed entirely.
+Decimals fixed in wrapped cUSDCv3.
+RToken Asset pricing issues fixed, (0, FIX_MAX) enforced as "unpriced".
+Reward remainder held until next claim instead of lost.
 
 ## Mitigations to be reviewed
 
-### Branch``
-[ ⭐️ SPONSORS ADD A LINK TO THE BRANCH IN YOUR REPO CONTAINING ALL PRS ]
+### Branch
+ https://github.com/reserve-protocol/protocol/tree/master
 
 ### Individual PRs
 
@@ -62,15 +65,15 @@ Wherever possible, mitigations should be provided in separate pull requests, one
 | https://github.com/reserve-protocol/protocol/pull/917 | M-06 | Enforce (0, FIX_MAX) as "unpriced" during oracle timeout. |
 | https://github.com/reserve-protocol/protocol/pull/917 | M-08 | Unpriced on oracle timeout. |
 | https://github.com/reserve-protocol/protocol/pull/917 | M-09 | Enforce (0, FIX_MAX) as "unpriced" during oracle timeout. |
-| https://github.com/reserve-protocol/protocol/pull/896 | M-10 | Acknowledged, documented. |
-| https://github.com/reserve-protocol/protocol/pull/920 | M-11 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/12#issuecomment-1695841823 |
-| https://github.com/reserve-protocol/protocol/pull/920 | M-12 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/10#issuecomment-1701397555 |
 
 ## Out of Scope
 
 | URL | Mitigation of | Purpose | 
 | ----------- | ------------- | ----------- |
-| | M-07 | Acknowledged. See details in commentt https://github.com/code-423n4/2023-07-reserve-findings/issues/24#issuecomment-1670250237 |
+| | M-07 | Acknowledged. See details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/24#issuecomment-1670250237 |
+| https://github.com/reserve-protocol/protocol/pull/896 | M-10 | Acknowledged, documented. |
+| https://github.com/reserve-protocol/protocol/pull/920 | M-11 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/12#issuecomment-1695841823 |
+| https://github.com/reserve-protocol/protocol/pull/920 | M-12 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/10#issuecomment-1701397555 |
 | | M-13 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/8#issuecomment-1688439465 |
 | | M-14 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/7#issuecomment-1695796001 |
 | | M-15 | Acknowledged. Details in comment https://github.com/code-423n4/2023-07-reserve-findings/issues/4#issuecomment-1695841054 |
