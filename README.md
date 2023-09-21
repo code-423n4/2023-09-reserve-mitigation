@@ -37,7 +37,11 @@ Mitigations of all High and Medium issues will be considered in-scope, with the 
 
 ## Overview of changes
 
-Please provide context about the mitigations that were applied if applicable and identify any areas of specific concern.
+Units and price calculations in LSD collateral types were fixed.
+CurveVolatileCollateral was removed entirely.
+Decimals fixed in wrapped cUSDCv3.
+RToken Asset pricing issues fixed, (0, FIX_MAX) enforced as "unpriced".
+Reward remainder held until next claim instead of lost.
 
 ## Mitigations to be reviewed
 
